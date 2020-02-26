@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-CURRENT_OS="darwin" # linux
-docker run --rm -e GOOS=${CURRENT_OS} -v ${PWD}:/work -v ${GOPATH}/pkg:/go/pkg -w /work golang:latest go build -o built_with_docker 
+GIT_TOKEN=""
+docker run --rm -e TARGET_OS=${TARGET_OS} -v ${PWD}:/work -v ${GOPATH}/pkg:/go/pkg -w /work golang:latest ./build.sh
